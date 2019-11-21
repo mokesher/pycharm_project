@@ -1,0 +1,54 @@
+.pic{
+    width: 55px;
+    height: 55px;
+}
+
+
+.top-pic{
+    width: 45px;
+    height: 45px;
+}
+
+
+.top-from{
+    margin-top: 70px;
+}
+
+
+.article-footer span{
+    margin-right: 15px;
+}
+
+
+.header {
+    height: 50px;
+    width: 100%;
+
+    background-color: #2aabd2;
+}
+
+.header p {
+    font-size: 24px;
+    padding: 10px 0;
+    font-weight: bold;
+}
+
+.container{
+    margin-top: 50px;
+}
+
+.article-title {
+    font-size: 20px;
+}
+
+.article-down {
+    text-align: center;
+    min-height: 15px;
+    _height: 15px;
+    margin-top: 10px;
+    padding-top: 30px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    color: #0f0f0f;
+}
+

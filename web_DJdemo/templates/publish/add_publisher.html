@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加出版社</title>
+</head>
+<body>
+<a href="/index/">首页</a>
+<h2>添加出版社</h2>
+
+<form action="/add_publisher/" method="post">
+    <input type="text" name="publisher_name">
+    <input type="submit" value="提交">
+</form>
+<p class="text-danger text-center">{{ error }}</p>
+</body>
+</html>

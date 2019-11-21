@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>csrf</title>
+</head>
+<body>
+    <form method="post" action="/csrf1/">
+        {% csrf_token %}
+        <input id="user" type="text" name="user" />
+        <input type="submit" value="提交" />
+        <a onclick="submitForm();">Ajax提交</a>
+    </form>
+<script src="/static/jquery-3.3.1.js"></script>
+<script>
+    {#function submitForm() {#}
+    {#    var csrf = $('input[name="csrfmiddlewaretoken"]').val();#}
+    {#    var user = $('#user').val();#}
+    {#    $.ajax({#}
+    {#        url:"/csrf1/",#}
+    {#        type:"POST",#}
+    {#        data:{"user":user,"csrfmiddlewaretoken":csrf},#}
+    {#        success:function (arg) {#}
+    {#            console.log(arg)#}
+    {#        }#}
+    {#    })#}
+
+
+    function submitForm() {
+    var token = $('input[name="csrfmiddlewaretoken"]').val();
+    var user = $('#user').val();
+    $.ajax({
+        url:"/csrf2/",
+        type:"POST",
+        headers:{"X-CSRFtoken":token},
+        data:{"user":user},
+        success:function (arg) {
+            alert(arg);
+        }
+    })
+}
+
+</script>
+</body>
+</html>

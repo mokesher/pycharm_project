@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改个人信息</title>
+    {% include "common/css.html" %}
+</head>
+<body>
+{% include "common/navbar.html" %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-primary top-from">
+                <div class="panel-heading">修改个人信息</div>
+                <div class="panel-body">
+                    <form action="/set_info/" method="post" novalidate autocomplete="off" class="form-horizontal" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        {% for obj in SetInfo_obj %}
+                            {% if obj.name != "pic" %}
+                                <div class="form-group">
+                                <label for="{{ obj.id_for_label }}"
+                                       class="col-sm-3 control-label">{{ obj.label }}</label>
+                                <div class="col-sm-6">
+                                    {{ obj }}
+                                    <span class="help-block"> {{ obj.errors.0 }} </span>
+                                </div>
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">头像：</label>
+                            <div class="col-sm-6">
+                                <label for="id_pic">
+                                <img class="pic" id="pic-img" src="/media/{{ request.user.pic }}" alt="..."></label>
+                                <input accept="image/*" value="/media/{{ request.user.pic }}" style="display: none" type="file" name="pic" id="id_pic">
+                                <span class="help-block">{{ SetInfo_obj.errors.pic.0 }}</span>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-9 col-sm-offset-3">
+                                <button type="submit" class="btn btn-default" id="reg-submit">提交</button>
+                                <span class="help-block"> {{ error_msg }} </span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $("#id_pic").change(function(){
+        var fileReader = new FileReader();
+        console.log(this.files[0]);
+        fileReader.readAsDataURL(this.files[0]);
+        fileReader.onload = function () {
+            $("#pic-img").attr("src",fileReader.result);
+        };
+        });
+
+</script>
+
+</body>
+</html>

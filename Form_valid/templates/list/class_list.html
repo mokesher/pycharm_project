@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>班级列表</h1>
+    <a href="/add_class/">add class</a>
+    <ul>
+        {% for class in cls_list %}
+            <Li>
+                {{ class.id }} | {{ class.title }} <a href="/edit_class/{{ class.id }}">edit</a>
+            </Li>
+        {% endfor %}
+
+    </ul>
+</body>
+</html>

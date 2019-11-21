@@ -2,20 +2,33 @@
 # -*- coding:utf-8 -*-
 import os,sys,shutil,random
 
-file_path = r"path"
 
-for i in os.listdir(file_path):
-    each_dir = os.path.join(file_path,i)
-    if os.path.isdir(each_dir):
-        for j in os.listdir(each_dir):
-            file = os.path.join(each_dir, j)
-            print(file)
-            try:
-                shutil.move(file, file_path)
-            except:
-                num = str(random.randint(1, 99))
-                new = j.rsplit(".", 1)[0] + num + "." + j.rsplit(".", 1)[1]
-                new_file = os.path.join(each_dir, new)
-                os.rename(file, new_file)
-                shutil.move(new_file, file_path)
+def run(start_path, result_file):
+    path_list = os.listdir(start_path)
+    for i in path_list:
+        file = os.path.join(start_path,i)
+
+        if os.path.isfile(file):
+            if file == os.path.join(result_file,i):
+                continue
+            elif ".mp4" in i:
+                print(file)
+                try:
+                    shutil.move(file, result_file)
+                except shutil.Error:
+                    name = i.rsplit(".")[0]
+                    typ = i.rsplit(".")[-1]
+                    new_name = name + str(random.randint(0,99)) + "." + typ
+                    print("rename",new_name)
+                    new_file = os.path.join(start_path,new_name)
+                    os.rename(file, new_file)
+                    shutil.move(new_file, result_file)
+        else:
+            run(file, result_file)
+
+
+start_path = r"E:\wanru35t"
+result_file = start_path
+run(start_path, result_file)
+
 

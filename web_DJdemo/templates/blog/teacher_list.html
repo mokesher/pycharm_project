@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户列表</title>
+</head>
+<body>
+
+<a href="/index/">首页</a>
+<a href="/add_teacher/">添加用户</a>
+<p></p>
+<table border="1">
+    <thead>
+    <tr>
+        <th>id值</th>
+        <th>用户值</th>
+        <th>班级</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for user in pages.object_list %}
+        <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.teacher }}</td>
+        <td>{{ user.theclass.class_name }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+    <div>
+        {% if pages.has_previous %}
+            <a href="/blog/teacher?page={{ pages.previous_page_number }}">上一页</a>
+        {% endif %}
+
+        {% for num in pages.paginator.page_range %}
+            <a href="/blog/teacher?page={{ num }}">{{ num }}</a>
+        {% endfor %}
+
+        {% if pages.has_next %}
+            <a href="/blog/teacher?page={{ pages.next_page_number }}">下一页</a>
+        {% endif %}
+    </div>
+</body>
+</html>

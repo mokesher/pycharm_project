@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+
+<a href="/registe/">registe</a>
+{% include "logout.html" %}
+
+<p>当前用户：{{ request.session.user_info.user }}</p>
+{% if request.session.user_info.gender == 1 %}
+    <p>性别： 男 </p>
+{% else %}
+    <p>性别：女 </p>
+{% endif %}
+
+
+<h4>用户表</h4>
+<table border="1">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+        </tr>
+    </thead>
+    {% for user in user_list %}
+        <tbody>
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.username }}</td>
+            </tr>
+        </tbody>
+    {% endfor %}
+</table>
+
+<h4>关系表</h4>
+<table border="1">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+        </tr>
+    </thead>
+    {% for user in relation_list %}
+        <tbody>
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.username }}</td>
+            </tr>
+        </tbody>
+    {% endfor %}
+</table>
+
+</body>
+</html>

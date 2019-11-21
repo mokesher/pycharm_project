@@ -1,0 +1,40 @@
+{% extends 'common/library/edit.html' %}
+
+{% block title %}  编辑书籍 {% endblock %}
+{% block head %} 编辑书籍 {% endblock %}
+
+{% block add_form %}
+
+    <form class="form-horizontal" action="/library/edit_book/" method="post">
+        <input type="text" style="display: none" name="id" value="{{ book.id }}">
+        <div class="form-group">
+            <label for="book_title" class="col-sm-2 control-label">书名</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="title" name="title"
+                       placeholder="书名" value="{{ book.title }}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">出版社</label>
+            <div class="col-sm-10">
+                <select class="form-control" name="publisher">
+                    {% for publisher in publisher_list %}
+                        {% if book.publisher_id == publisher.id %}
+                            <option selected value="{{ publisher.id }}">{{ publisher.name }}</option>
+                        {% else %}
+                            {# 其他的出版社不选中 #}
+                            <option value="{{ publisher.id }}">{{ publisher.name }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-success">提交</button>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}
+

@@ -1,0 +1,42 @@
+{% extends 'common/library/list.html' %}
+
+{% block title %} publisher {% endblock %}
+
+{% block heading %} 出版社列表 {% endblock %}
+
+{% block content %}
+    <div class="row" style="margin-bottom: 15px">
+        <div class="col-md-1">
+            <a href="/library/add_publisher/" class="btn btn-success">增加出版社</a>
+        </div>
+        <div class="col-md-1 pull-right">
+            <button class="btn btn-success" data-toggle="modal" data-target="#myModal">新增</button>
+        </div>
+    </div>
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>序号</th>
+        <th>出版社名称</th>
+        <th>编辑</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for publisher in publisher_list %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ publisher.name }}</td>
+            <td>
+                <a class="btn btn-info" href="/library/edit_publisher/?id={{ publisher.id }}">编辑</a>
+            </td>
+            <td>
+                <a class="btn btn-danger" href="/library/delete_publisher/?id={{ publisher.id }}">删除</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

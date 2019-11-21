@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>delete</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    <style>
+        .delete_btn{
+            background: #ba2121;
+            border-radius: 4px;
+            padding: 5px 10px;
+            color: #fff;
+        }
+        .cancel_btn{
+            background: #ddd;
+            border-radius: 4px;
+            padding: 8px 10px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div>
+            <form action="" method="post">
+            <h3>
+                Are you sure?
+            </h3>
+            {% csrf_token %}
+            <div>
+                <button class="btn delete_btn" type="submit">Yes, I'm sure</button>
+                <a class="cancel_btn" href="{{ url }}">取消</a>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

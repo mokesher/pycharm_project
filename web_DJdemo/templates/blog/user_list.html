@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户列表</title>
+</head>
+<body>
+
+<a href="/index/">首页</a>
+<a href="/add_user/">添加用户</a>
+<p></p>
+<table border="1">
+    <thead>
+    <tr>
+        <th>id值</th>
+        <th>用户值</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for user in user_list %}
+        <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.student }}</td>
+        <td>
+            <a href="/delete_user/?id={{ user.id }}">删除</a>
+        </td>
+
+        </tr>
+    {% endfor %}
+    
+    </tbody>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+</head>
+<body>
+<h4>ajax_test</h4>
+{% csrf_token %}
+
+<input type="text" id="i1">+
+<input type="text" id="i2">=
+<input type="text" id="i3">
+<input type="button" value="提交" id="b1">
+
+
+<script src="/static/jquery-3.3.1.js"></script>
+<script>
+    $("#b1").on("click", function () {
+        var csrftoken = $("[name='csrfmiddlewaretoken']").val();
+        $.ajax({
+            url: "/ajax_test/",
+            type: "POST",
+            {#data: {"i1": $("#i1").val(), "i2": $("#i2").val(), "csrfmiddlewaretoken": csrftoken},#}
+            data: {"i1": $("#i1").val(), "i2": $("#i2").val()},
+            headers:{'X-CSRFToken': csrftoken},
+            success: function (arg) {
+                $("#i3").val(arg);
+            }
+        })
+    })
+
+
+
+</script>
+
+
+</body>
+</html>

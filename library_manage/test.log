@@ -1,0 +1,186 @@
+*** Starting uWSGI 2.0.18 (64bit) on [Mon Oct 14 21:44:48 2019] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-39) on 13 October 2019 12:23:42
+os: Linux-3.10.0-229.el7.x86_64 #1 SMP Fri Mar 6 11:36:42 UTC 2015
+nodename: localhost.localdomain
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /www/server/panel
+detected binary path: /www/wwwroot/library_manage/library_manage_venv/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /www/wwwroot/library_manage
+your processes number limit is 3873
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8002 fd 4
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.7.4 (default, Oct 13 2019, 16:33:46)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-39)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xfb9eb0
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 364600 bytes (356 KB) for 4 cores
+*** Operational MODE: preforking ***
+Traceback (most recent call last):
+  File "./library_manage/wsgi.py", line 12, in <module>
+    from django.core.wsgi import get_wsgi_application
+ModuleNotFoundError: No module named 'django'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 33141)
+spawned uWSGI worker 1 (pid: 33142, cores: 1)
+spawned uWSGI worker 2 (pid: 33143, cores: 1)
+spawned uWSGI worker 3 (pid: 33144, cores: 1)
+spawned uWSGI worker 4 (pid: 33145, cores: 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 33142|app: -1|req: -1/1] 118.181.158.51 () {44 vars in 1330 bytes} [Mon Oct 14 21:44:54 2019] GET /index/ => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 33142|app: -1|req: -1/2] 118.181.158.51 () {44 vars in 1311 bytes} [Mon Oct 14 21:44:58 2019] GET /index/ => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 33142|app: -1|req: -1/3] 118.181.158.51 () {44 vars in 1330 bytes} [Mon Oct 14 21:45:04 2019] GET /index/ => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 33142|app: -1|req: -1/4] 118.181.158.51 () {42 vars in 1269 bytes} [Mon Oct 14 21:45:17 2019] GET // => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 33142|app: -1|req: -1/5] 118.181.158.51 () {42 vars in 1268 bytes} [Mon Oct 14 21:45:19 2019] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+Mon Oct 14 21:45:44 2019 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Mon Oct 14 21:45:44 2019 - uWSGI worker 2 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Mon Oct 14 21:45:44 2019 - uWSGI worker 3 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Mon Oct 14 21:45:44 2019 - uWSGI worker 4 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.18 (64bit) on [Tue Oct 15 11:17:39 2019] ***
+compiled with version: 4.8.5 20150623 (Red Hat 4.8.5-39) on 13 October 2019 12:23:42
+os: Linux-3.10.0-229.el7.x86_64 #1 SMP Fri Mar 6 11:36:42 UTC 2015
+nodename: localhost.localdomain
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /www/server/panel
+detected binary path: /www/wwwroot/library_manage/library_manage_venv/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /www/wwwroot/library_manage
+your processes number limit is 3873
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8002 fd 4
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.7.4 (default, Oct 13 2019, 16:33:46)  [GCC 4.8.5 20150623 (Red Hat 4.8.5-39)]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x19ed010
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 364600 bytes (356 KB) for 4 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x19ed010 pid: 53073 (default app)
+mountpoint  already configured. skip.
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 53073)
+spawned uWSGI worker 1 (pid: 53079, cores: 1)
+spawned uWSGI worker 2 (pid: 53081, cores: 1)
+spawned uWSGI worker 3 (pid: 53082, cores: 1)
+spawned uWSGI worker 4 (pid: 53083, cores: 1)
+[pid: 53083|app: 0|req: 1/1] 118.181.158.51 () {42 vars in 1261 bytes} [Tue Oct 15 03:17:47 2019] GET / => generated 1227 bytes in 56 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 53083|app: 0|req: 2/2] 118.181.158.51 () {44 vars in 1323 bytes} [Tue Oct 15 03:17:49 2019] GET /author_list/ => generated 9592 bytes in 11494 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 53083|app: 0|req: 3/3] 118.181.158.51 () {44 vars in 1323 bytes} [Tue Oct 15 04:14:30 2019] GET /index/ => generated 1227 bytes in 3 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 53083|app: 0|req: 4/4] 118.181.154.6 () {44 vars in 1328 bytes} [Tue Oct 15 05:35:52 2019] GET /author_list/ => generated 9592 bytes in 10603 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 53083|app: 0|req: 5/5] 118.181.154.6 () {44 vars in 1322 bytes} [Tue Oct 15 05:36:08 2019] GET /index/ => generated 1227 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+<QuerySet [<Publisher: <Publisher object：>>, <Publisher: <Publisher object：>>, <Publisher: <Publisher object：>>, <Publisher: <Publisher object：>>, <Publisher: <Publisher object：>>, <Publisher: <Publisher object：>>]>
+[pid: 53083|app: 0|req: 6/6] 118.181.154.6 () {44 vars in 1334 bytes} [Tue Oct 15 05:36:10 2019] GET /publisher_list/ => generated 8823 bytes in 11763 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 53083|app: 0|req: 7/7] 118.181.154.6 () {44 vars in 1325 bytes} [Tue Oct 15 05:37:23 2019] GET /index/ => generated 1227 bytes in 2 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 53082|app: 0|req: 1/8] 118.181.154.6 () {44 vars in 1328 bytes} [Tue Oct 15 05:37:24 2019] GET /author_list/ => generated 9592 bytes in 10712 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 53083|app: 0|req: 8/9] 118.181.154.6 () {44 vars in 1322 bytes} [Tue Oct 15 05:38:02 2019] GET /index/ => generated 1227 bytes in 1 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+<QuerySet [<Publisher: <Publisher object：>>, <Publisher: <Publisher object：>>, <Publisher: <Publisher object：>>, <Publisher: <Publisher object：>>, <Publisher: <Publisher object：>>, <Publisher: <Publisher object：>>]>
+[pid: 53083|app: 0|req: 9/10] 118.181.154.6 () {44 vars in 1334 bytes} [Tue Oct 15 05:38:05 2019] GET /publisher_list/ => generated 8823 bytes in 7648 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 53082|app: 0|req: 2/11] 118.181.154.6 () {44 vars in 1324 bytes} [Tue Oct 15 05:38:05 2019] GET /book_list/ => generated 3288 bytes in 10705 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 53083|app: 0|req: 10/12] 118.181.154.6 () {44 vars in 1328 bytes} [Tue Oct 15 05:38:23 2019] GET /author_list/ => generated 9592 bytes in 1773 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 53083|app: 0|req: 11/13] 118.181.154.6 () {44 vars in 1332 bytes} [Tue Oct 15 05:38:28 2019] GET /add_author/ => generated 3044 bytes in 686 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+Internal Server Error: /add_author/
+Traceback (most recent call last):
+  File "/www/wwwroot/library_manage/library_manage_venv/lib/python3.7/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/www/wwwroot/library_manage/library_manage_venv/lib/python3.7/site-packages/django/db/backends/mysql/base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "/www/wwwroot/library_manage/library_manage_venv/lib/python3.7/site-packages/MySQLdb/cursors.py", line 209, in execute
+    res = self._query(query)
+  File "/www/wwwroot/library_manage/library_manage_venv/lib/python3.7/site-packages/MySQLdb/cursors.py", line 315, in _query
+    db.query(q)
+  File "/www/wwwroot/library_manage/library_manage_venv/lib/python3.7/site-packages/MySQLdb/connections.py", line 226, in query
+    _mysql.connection.query(self, query)
+MySQLdb._exceptions.IntegrityError: (1062, "Duplicate entry 'MOKE' for key 'name'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/library_manage/library_manage_venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/www/wwwroot/library_manage/library_manage_venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/www/wwwroot/library_manage/library_manage_venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "./library/views.py", line 152, in add_author
+    new_author_obj = models.Author.objects.create(name=new_name)
+  File "/www/wwwroot/library_manage/library_manage_venv/lib/python3.7/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/www/wwwroot/library_manage/library_manage_venv/lib/python3.7/site-packages/django/db/models/query.py", line 422, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/www/wwwroot/library_manage/library_manage_venv/lib/python3.7/site-packages/django/db/models/base.py", line 741, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/www/wwwroot/library_manage/library_manage_venv/lib/python3.7/site-packages/django/db/models/base.py", line 779, in save_base
+    force_update, using, update_fields,
+  File "/www/wwwroot/library_manage/library_manage_venv/lib/python3.7/site-packages/django/db/models/base.py", line 870, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/www/wwwroot/library_manage/library_manage_venv/lib/python3.7/site-packages/django/db/models/base.py", line 908, in _do_insert
+    using=using, raw=raw)
+  File "/www/wwwroot/library_manage/library_manage_venv/lib/python3.7/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/www/wwwroot/library_manage/library_manage_venv/lib/python3.7/site-packages/django/db/models/query.py", line 1186, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/www/wwwroot/library_manage/library_manage_venv/lib/python3.7/site-packages/django/db/models/sql/compiler.py", line 1335, in execute_sql
+    cursor.execute(sql, params)
+  File "/www/wwwroot/library_manage/library_manage_venv/lib/python3.7/site-packages/django/db/backends/utils.py", line 99, in execute
+    return super().execute(sql, params)
+  File "/www/wwwroot/library_manage/library_manage_venv/lib/python3.7/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/www/wwwroot/library_manage/library_manage_venv/lib/python3.7/site-packages/django/db/backends/utils.py", line 76, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/www/wwwroot/library_manage/library_manage_venv/lib/python3.7/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/www/wwwroot/library_manage/library_manage_venv/lib/python3.7/site-packages/django/db/utils.py", line 89, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/www/wwwroot/library_manage/library_manage_venv/lib/python3.7/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/www/wwwroot/library_manage/library_manage_venv/lib/python3.7/site-packages/django/db/backends/mysql/base.py", line 71, in execute
+    return self.cursor.execute(query, args)
+  File "/www/wwwroot/library_manage/library_manage_venv/lib/python3.7/site-packages/MySQLdb/cursors.py", line 209, in execute
+    res = self._query(query)
+  File "/www/wwwroot/library_manage/library_manage_venv/lib/python3.7/site-packages/MySQLdb/cursors.py", line 315, in _query
+    db.query(q)
+  File "/www/wwwroot/library_manage/library_manage_venv/lib/python3.7/site-packages/MySQLdb/connections.py", line 226, in query
+    _mysql.connection.query(self, query)
+django.db.utils.IntegrityError: (1062, "Duplicate entry 'MOKE' for key 'name'")
+[pid: 53083|app: 0|req: 12/14] 118.181.154.6 () {52 vars in 1513 bytes} [Tue Oct 15 05:38:37 2019] POST /add_author/ => generated 174397 bytes in 944 msecs (HTTP/1.1 500) 4 headers in 130 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 53082|app: 0|req: 3/15] 118.181.154.6 () {42 vars in 1250 bytes} [Tue Oct 15 05:38:38 2019] GET /favicon.ico => generated 3641 bytes in 13 msecs (HTTP/1.1 404) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 53081|app: 0|req: 1/16] 118.181.154.6 () {44 vars in 1343 bytes} [Tue Oct 15 05:38:48 2019] GET /edit_author/?id=2 => generated 3691 bytes in 834 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 53083|app: 0|req: 13/17] 118.181.154.6 () {52 vars in 1521 bytes} [Tue Oct 15 05:38:52 2019] POST /edit_author/ => generated 0 bytes in 532 msecs (HTTP/1.1 302) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 53082|app: 0|req: 4/18] 118.181.154.6 () {46 vars in 1370 bytes} [Tue Oct 15 05:38:53 2019] GET /author_list/ => generated 9702 bytes in 421 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 53083|app: 0|req: 14/19] 118.181.154.6 () {44 vars in 1343 bytes} [Tue Oct 15 05:38:55 2019] GET /edit_author/?id=6 => generated 3693 bytes in 707 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 53082|app: 0|req: 5/20] 118.181.154.6 () {52 vars in 1521 bytes} [Tue Oct 15 05:38:58 2019] POST /edit_author/ => generated 0 bytes in 859 msecs (HTTP/1.1 302) 4 headers in 135 bytes (1 switches on core 0)
+[pid: 53083|app: 0|req: 15/21] 118.181.154.6 () {46 vars in 1370 bytes} [Tue Oct 15 05:38:59 2019] GET /author_list/ => generated 9823 bytes in 623 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)

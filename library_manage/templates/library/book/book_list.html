@@ -1,0 +1,44 @@
+{% extends 'common/library/list.html' %}
+
+{% block title %} book {% endblock %}
+
+{% block heading %} 书籍列表 {% endblock %}
+
+{% block content %}
+    <div class="row" style="margin-bottom: 15px">
+        <div class="col-md-1">
+            <a href="/library/add_book/" class="btn btn-success">增加书籍</a>
+        </div>
+        <div class="col-md-1 pull-right">
+            <button class="btn btn-success" data-toggle="modal" data-target="#myModal">新增</button>
+        </div>
+    </div>
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>序号</th>
+        <th>书籍名称</th>
+        <th>出版社名称</th>
+        <th>编辑</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for book in book_list %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ book.title }}</td>
+            <td>{{ book.publisher.name }}</td>
+            <td>
+                <a class="btn btn-info" href="/library/edit_book/?id={{ book.id }}">编辑</a>
+            </td>
+            <td>
+                <a class="btn btn-danger" href="/library/delete_book/?id={{ book.id }}">删除</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

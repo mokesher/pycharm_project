@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+<a href="/regeist/">注册</a>
+<form action="" method="post" novalidate autocomplete="off">
+    {% csrf_token %}
+
+<p>
+    用户名：{{ Form_obj.username }} {{ Form_obj.errors.username.0 }}
+</p>
+
+<p>
+    密码：{{ Form_obj.password }} {{ Form_obj.errors.password.0 }}
+</p>
+    <input style="margin-left: 50px" type="submit" value="登录" />
+    <p style="color: red">
+        {{ error_msg }}
+    </p>
+
+</form>
+</body>
+</html>

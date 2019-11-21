@@ -1,0 +1,34 @@
+{% extends 'common/library/edit.html' %}
+
+{% block title %}  添加新书 {% endblock %}
+{% block head %} 添加新书 {% endblock %}
+
+{% block add_form %}
+
+    <form class="form-horizontal" action="/library/add_book/" method="post">
+        <div class="form-group">
+            <label for="book_title" class="col-sm-2 control-label">书名</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="book" placeholder="书名">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="publisher" class="col-sm-2 control-label">出版社</label>
+            <div class="col-sm-10">
+                <select class="form-control" name="publisher">
+                    {% for publisher in publisher_list %}
+                        <option value="{{ publisher.id }}">{{ publisher.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-success">提交</button>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}
+
+

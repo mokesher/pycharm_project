@@ -1,0 +1,40 @@
+{% extends 'common/library/edit.html' %}
+
+{% block title %}  编辑作者 {% endblock %}
+{% block head %} 编辑作者 {% endblock %}
+
+{% block add_form %}
+
+    <form class="form-horizontal" action="/library/edit_author/" method="post">
+        <input type="text" style="display: none" name="id" value="{{ author.id }}">
+        <div class="form-group">
+            <label for="book_title" class="col-sm-2 control-label">作者</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="author" name="author"
+                       value="{{ author.name }}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="book" class="col-sm-2 control-label">作品</label>
+            <div class="col-sm-10">
+                <select multiple class="form-control" name="books">
+                    {% for book in book_list %}
+                        {% if book in author.book.all %}
+                            <option selected value="{{ book.id }}">{{ book.title }}</option>
+                        {% else %}
+                            <option value="{{ book.id }}">{{ book.title }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-success">提交</button>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}
+
