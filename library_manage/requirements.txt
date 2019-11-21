@@ -54,7 +54,7 @@ networkx==2.2
 olefile==0.46
 packaging==19.0
 pefile==2018.8.8
-Pillow==6.1.0
+Pillow==6.2.0
 pipreqs==0.4.9
 pycparser==2.19
 pygame==1.9.4
