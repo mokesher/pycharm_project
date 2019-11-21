@@ -71,7 +71,7 @@ olefile==0.46
 opencv-python==4.1.1.26
 packaging==19.0
 pefile==2018.8.8
-Pillow==6.1.0
+Pillow==6.2.0
 pipreqs==0.4.9
 protobuf==3.9.1
 pycparser==2.19
