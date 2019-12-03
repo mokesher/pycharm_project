@@ -9,6 +9,7 @@ from stark.utils.Pagination import Pagination
 from django.db.models import Q
 from django.db.models.fields.related import ManyToManyField,ForeignKey
 
+
 class ShowList:
     def __init__(self,config,request,data_list):
         self.config = config

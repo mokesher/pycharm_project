@@ -17,20 +17,20 @@
                 <div class="panel-body">
                     <form action="/login/" method="post" novalidate autocomplete="off" class="form-horizontal">
                         {% csrf_token %}
-                        {% for obj in Form_obj %}
+                        {% for obj in form %}
                             <div class="form-group">
                                 <label for="{{ obj.id_for_label }}"
                                        class="col-sm-3 control-label">{{ obj.label }}</label>
                                 <div class="col-sm-6">
                                     {{ obj }}
-                                    <span class="help-block"> {{ obj.errors.0 }} </span>
+                                    <span class="help-block"> {{ obj.errors }} </span>
                                 </div>
                             </div>
                         {% endfor %}
                         <div class="form-group">
                             <div class="col-sm-offset-3 col-sm-6">
                                 <button type="submit" class="btn btn-default">登录</button>
-                                <span class="help-block"> {{ error_msg }} </span>
+                                <span class="help-block">{{ form.non_field_errors.0 }}</span>
                             </div>
                         </div>
                     </form>

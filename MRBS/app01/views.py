@@ -6,6 +6,7 @@ import datetime
 import json
 from django.views.decorators.csrf import csrf_exempt
 
+
 @login_required
 def index(request):
     date = datetime.datetime.now().date()

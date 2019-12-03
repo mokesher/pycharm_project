@@ -25,7 +25,7 @@ def article(data):
     total_page = int(comment_count/50) + 1
 
     for page in range(1, total_page+1):
-        print(page)
+        # print(page)
         req_url = f"https://www.acfun.cn/rest/pc-direct/comment/listByFloor?sourceId={id}&sourceType=3&page={page}&pivotCommentId=0&newPivotCommentId=0&_ts={int(100*time.time())}"
         down(article_title, req_url, url,page)
 
@@ -34,14 +34,17 @@ def down(article_title, req_url, url, page):
     article_con = json.loads(login_session.get(req_url,headers=headers).text)
     article_txt = article_con["commentsMap"]
     for data in article_txt:
+        date = str(article_txt[data]["postDate"])
         user_name = article_txt[data]["userName"]
+        # print(user_name)
         content = article_txt[data]["content"]
-        if user_name == "不知有汉":
+        if user_name == "白一1":
             print("评论:", url)
             print("page:", page)
             print(content)
+            print(date)
 
-            # tosql(article_title,page,content,url)
+            # tosql(article_title,page,content,url,date)
 
             with open("comment/%s.txt" % article_title, 'a+', encoding="utf-8") as article_write:
                 article_write.write(article_title + '\n')
@@ -51,6 +54,7 @@ def down(article_title, req_url, url, page):
 
 
 login_session = Login()
+
 headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36"}
 
 article_threading_list = []
@@ -66,4 +70,5 @@ for page in range(1, 1000):
 
     for t in article_threading_list:
         t.join()
+
 

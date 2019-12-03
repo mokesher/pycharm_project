@@ -25,7 +25,7 @@ def article(data):
 
     total_page = int(comment_count/50) + 1
     for page in range(1, total_page+1):
-        print(page)
+        # print(page)
         req_url = f"https://www.acfun.cn/rest/pc-direct/comment/" \
                       f"listByFloor?sourceId={id}&sourceType=3&page={page}&" \
                       f"pivotCommentId=0&newPivotCommentId=0&_ts={int(100*time.time())}"
@@ -37,20 +37,21 @@ def down(article_title, req_url, url, page):
 
     article_txt = article_con["commentsMap"]
     for data in article_txt:
+        date = str(article_txt[data]["postDate"])
         user_name = article_txt[data]["userName"]
         content = article_txt[data]["content"]
-        if user_name == "不知有汉":
+        if user_name == "中老年抖m":
             print("评论:", url)
             print("page:", page)
             print(content)
 
-            # tosql(article_title,page,content,url)
+            tosql(article_title,page,content,url,date)
 
-            with open("comment/%s.txt" % article_title, 'a+', encoding="utf-8") as article_write:
-                article_write.write(article_title + '\n')
-                article_write.write("page:" + str(page) + '\n')
-                article_write.write(content + '\n')
-                article_write.write(url + '\n')
+            # with open("comment/%s.txt" % article_title, 'a+', encoding="utf-8") as article_write:
+            #     article_write.write(article_title + '\n')
+            #     article_write.write("page:" + str(page) + '\n')
+            #     article_write.write(content + '\n')
+            #     article_write.write(url + '\n')
 
 
 login_session = Login()

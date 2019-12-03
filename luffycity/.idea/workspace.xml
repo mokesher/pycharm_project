@@ -48,6 +48,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="JsBowerSettings">
     <node-interpreter value="project" />
     <exe-path />
@@ -61,6 +64,7 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectId" id="1TodHzAzU0DEqhsS4sGInTqsQaU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/api" />
@@ -252,12 +256,24 @@
       <workItem from="1574215031377" duration="5817000" />
       <workItem from="1574263517341" duration="10000" />
       <workItem from="1574300433746" duration="1676000" />
-      <workItem from="1574304494599" duration="3614000" />
+      <workItem from="1574304494599" duration="4417000" />
+      <workItem from="1574336315254" duration="18000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/luffycity$shell.coverage" NAME="shell Coverage Results" MODIFIED="1574219909348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

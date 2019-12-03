@@ -25,7 +25,7 @@ class ValidPermission(MiddlewareMixin):
         valid_url_list=["/login/","/reg/","/admin/.*","^/$","/test/"]
 
         for valid_url in valid_url_list:
-            ret=re.match(valid_url,current_path)
+            ret = re.match(valid_url,current_path)
             if ret:
                 return None
 

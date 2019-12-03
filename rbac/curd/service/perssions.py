@@ -1,7 +1,5 @@
 
 
-
-
 def initial_session(user,request):
     # 方案1
     # permissions = user.roles.all().values("permissions__url").distinct()

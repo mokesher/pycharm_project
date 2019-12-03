@@ -31,15 +31,15 @@ myword = []
 # text = ' '.join(myword)
 # print(text)
 
-image = np.array(Image.open('14608154_1.jpg'))
+image = np.array(Image.open('background/1.jpg'))
 
 wc = WordCloud(
     background_color="white",
     mask = image,
-    scale=2,
+    scale=4,
     random_state=42,
     max_words=800,
-    max_font_size=220,
+    max_font_size=100,
     height=2500,
     width=2560,
     font_path="./simkai.ttf",
@@ -52,7 +52,7 @@ image_colors = ImageColorGenerator(image)
 wc.recolor(color_func=image_colors)
 
 plt.imshow(wc)
-# plt.axis("off")
+plt.axis("off")
 plt.show()
 wc.to_file("test.png")
 print("OK")

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+Hello Moke
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>选项</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for k,v in stu_dic.items() %}
+    <tr>
+        <td>{{ k }}</td>
+        <td>{{ v.name }}</td>
+        <td>{{ v.age }}</td>
+        <td>
+            <a href="/detail/{{ k }}">详细</a>
+            |
+            <a href="/delate/{{ k }}">删除</a>
+        </td>
+    </tr>
+    {% endfor %}
+
+    </tbody>
+</table>
+
+
+</body>
+</html>

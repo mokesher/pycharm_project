@@ -25,3 +25,5 @@ def left_panel(username):
         "tag_list": tag_list,
         "archive_list": archive_list,
     }
+
+

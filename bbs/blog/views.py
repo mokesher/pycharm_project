@@ -1,175 +1,60 @@
 from django.shortcuts import render, redirect, HttpResponse
 from blog import models
-from functools import wraps
-from django.contrib import auth
-from django.contrib.auth.decorators import login_required
-from django.views.decorators.csrf import csrf_exempt
-from blog.forms import LoginForm,SetpwdForm,RegForm,SetInfoForm
 from django.http import JsonResponse
-import time,requests,json,os
+import json,os
 from django.db.models import F,Count
 from django.conf import settings
-from datetime import datetime
 from bs4 import BeautifulSoup
-
-# def check_login(func):
-#     @wraps(func)
-#     def inner(request, *args, **kwargs):
-#         if request.session.get("is_login") == "1":
-#             return func(request, *args, **kwargs)
-#         else:
-#             next_url = request.get_full_path()
-#             return redirect(f"/login/?next={next_url}")
-#     return inner
+from django.views.generic import ListView,DetailView
 
 
-@login_required
-# @check_login
-def index(request):
-    article_list = models.Article.objects.all()
-    return render(request, "index.html", {"article_list": article_list})
-
-
-def login(request):
-    error_msg = ""
-
-    if request.method == "GET":
-        Form_obj = LoginForm()
-        return render(request, "login.html", {"Form_obj": Form_obj})
-
-    if request.method == "POST":
-        Form_obj = LoginForm(request.POST)
-        if Form_obj.is_valid():
-            user = auth.authenticate(**Form_obj.cleaned_data)
-            if user:
-                auth.login(request, user)
-                request.session["is_login"] = "1"
-                return redirect('/index/')
-            else:
-                error_msg = "用户名或密码错误"
-        return render(request,"login.html",{"error_msg": error_msg,"Form_obj": Form_obj})
-
-
-def logout(request):
-    auth.logout(request)
-    return redirect('/login/')
-
-
-def register(request):
-
-    if request.method == "GET":
-        reg_obj = RegForm()
-        return render(request, "register.html", {"reg_obj": reg_obj})
-    else:
-        ret = {"status": 0, "msg": ""}
-        reg_obj = RegForm(request.POST, request.FILES)
-        if reg_obj.is_valid():
-            # file = reg_obj.cleaned_data["pic"]
-            # with open(f"pics/{file.name}", "wb") as f:
-            #     for chunk in file.chunks():
-            #         f.write(chunk)
-            models.UserInfo.objects.create_user(**reg_obj.cleaned_data)
-            ret["msg"] = "/index/"
-            return JsonResponse(ret)
-        else:
-            ret["status"] = 1
-            ret["msg"] = reg_obj.errors
-            return JsonResponse(ret)
-            # return render(request, "register.html", {"reg_obj": reg_obj, "error_msg": error_msg})
-
-
-def check_username(request):
-    ret = {"status": 0, "msg": ""}
-    username = request.GET.get("username")
-    if models.UserInfo.objects.filter(username=username):
-        ret["status"] = 1
-        ret["msg"] = "用户名已存在"
-    return JsonResponse(ret)
-
-
-# @check_login
-@login_required
-def change_pwd(request):
-    if request.method == "GET":
-        setpwd_obj = SetpwdForm()
-        return render(request, "set_password.html", {"setpwd_obj": setpwd_obj})
-
-    if request.method == "POST":
-        error_msg = ""
-        user = request.user
-        setpwd_obj = SetpwdForm(request.POST)
-        if setpwd_obj.is_valid():
-            old_password = setpwd_obj.cleaned_data.get("old_password")
-            new_password = setpwd_obj.cleaned_data.get("new_password")
-            repeat_password = setpwd_obj.cleaned_data.get("repeat_password")
-            if not user.check_password(old_password):
-                error_msg = "旧密码错误"
-            else:
-                if new_password != repeat_password:
-                    error_msg = "密码不一致"
-                elif new_password == old_password:
-                    error_msg = "新密码不能和旧密码重复"
-                else:
-                    user.set_password(repeat_password)
-                    user.save()
-                    return redirect("/login/")
-
-        return render(request,"set_password.html", {"setpwd_obj": setpwd_obj, "error_msg": error_msg})
-
-# @check_login
-@login_required
-def set_info(request):
-    if request.method == "GET":
-        SetInfo_obj = SetInfoForm()
-        return render(request, "set_info.html", {"SetInfo_obj": SetInfo_obj})
-    else:
-        SetInfo_obj = SetInfoForm(request.POST)
-        avatar_img = request.FILES.get("pic")
-        if SetInfo_obj.is_valid():
-            file_path = os.path.join(settings.MEDIA_ROOT, avatar_img.name)
-            if os.path.exists(file_path):
-                fix = datetime.now().strftime('%Y%m%d%H%M%S')
-                file_path = os.path.join(settings.MEDIA_ROOT, fix + avatar_img.name)
-            else:
-                fix = ""
-            with open(file_path, "wb") as f:
-                for chunk in avatar_img.chunks():
-                    f.write(chunk)
-
-            models.UserInfo.objects.filter(username=request.user.username).update(**SetInfo_obj.cleaned_data, pic=(fix+avatar_img.name))
-            return redirect("/index/")
-        else:
-            return render(request, "set_info.html", {"SetInfo_obj": SetInfo_obj})
-
-
-def home(request,username):
+def get_user(self):
+    username = self.kwargs.get("username")
     user = models.UserInfo.objects.filter(username=username).first()
-    if not user:
-        return HttpResponse("404")
-    else:
-        blog = user.blog
-        article_list = models.Article.objects.filter(user=user)
-
-        return render(request, "blog/home.html", {
-            "username": username,
-            "blog": blog,
-            "article_list": article_list,
-        })
+    return user
 
 
-def article_detail(request, username, article_id):
-    user = models.UserInfo.objects.filter(username=username).first()
-    if not user:
-        return HttpResponse(404)
-    blog = user.blog
-    article_obj = models.Article.objects.filter(pk=article_id).first()
-    comment_obj = models.Comment.objects.filter(article_id=article_id)
+class IndexView(ListView):
+    template_name = "index.html"
+    context_object_name = "article_list"
 
-    return render(request, "blog/article_detail.html", {
-        "username": username,
-        "article_obj": article_obj,
-        "comment_obj": comment_obj,
-        "blog": blog})
+    def get_queryset(self):
+        article_list = models.Article.objects.all()
+        return article_list
+
+
+class ArticleListView(IndexView):
+    template_name = "blog/article_index.html"
+    context_object_name = "article_list"
+
+    def get_queryset(self):
+        return super(ArticleListView, self).get_queryset().filter(user=get_user(self))
+
+    def get_context_data(self, **kwargs):
+        kwargs['user'] = get_user(self)
+        return super(ArticleListView, self).get_context_data(**kwargs)
+
+
+class ArticleDetailView(DetailView):
+    template_name = "blog/article_detail.html"
+    context_object_name = "article"
+    model = models.Article
+    pk_url_kwarg = 'article_id'
+
+    def get_object(self, queryset=None):
+        obj = super(ArticleDetailView, self).get_object()
+        return obj
+
+    def get_context_data(self, **kwargs):
+        user = get_user(self)
+        article_id = self.kwargs.get("article_id")
+        if not user:
+            return HttpResponse(404)
+        comments = models.Comment.objects.filter(article_id=article_id)
+        kwargs['comments'] = comments
+        kwargs['user'] = user
+
+        return super(ArticleDetailView, self).get_context_data(**kwargs)
 
 
 def up_down(request):
@@ -187,7 +72,7 @@ def up_down(request):
         response["state"] = False
         response["fisrt_action"]=models.ArticleUpDown.objects.filter(user=user,article_id=article_id).first().is_up
 
-    return  JsonResponse(response)
+    return JsonResponse(response)
 
 
 def comment(request):

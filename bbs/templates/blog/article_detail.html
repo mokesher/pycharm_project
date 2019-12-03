@@ -1,24 +1,24 @@
 {% extends "common/article_base.html" %}
 
 {% block article-main %}
-    <h3>{{ article_obj.title }}</h3>
-    <p>{{ article_obj.articledetail.content|safe }}</p>
+    <h3>{{ article.title }}</h3>
+    <p>{{ article.articledetail.content|safe }}</p>
 
 
     <div class="article-footer">
         <span>
-            <a href="/blog/{{ article_obj.user.username }}/">{{ article_obj.user.username }}</a>
+            <a href="/blog/{{ article.user.username }}/">{{ article.user.username }}</a>
         </span>发布于
         <span>
-            {{ article_obj.create_time|date:'Y-m-d H:i:s' }}
+            {{ article.create_time|date:'Y-m-d H:i:s' }}
         </span>
         <div class="poll clearfix">
             <div id="div_digg">
                 <div class="diggit action">
-                    <span class="diggnum" id="digg_count">{{ article_obj.up_count }}</span>
+                    <span class="diggnum" id="digg_count">{{ article.up_count }}</span>
                 </div>
                 <div class="buryit action">
-                    <span class="burynum" id="bury_count">{{ article_obj.down_count }}</span>
+                    <span class="burynum" id="bury_count">{{ article.down_count }}</span>
                 </div>
                 <div class="clear"></div>
                 <div class="diggword" id="digg_tips" style="color: red;"></div>
@@ -26,7 +26,7 @@
         </div>
     </div>
     {#    ajax预留参数#}
-    <div class="article_id" article_id="{{ article_obj.pk }}"></div>
+    <div class="article_id" article_id="{{ article.pk }}"></div>
 
     <div>
         <p>评论树</p>
@@ -38,7 +38,7 @@
 
     <p>评论列表</p>
     <div class="comment_list">
-        {% for comment in comment_obj %}
+        {% for comment in comments %}
             <li class="list-group-item">
                 <div>
                     {% if comment.user.username == request.user.username %}

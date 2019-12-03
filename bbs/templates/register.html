@@ -16,15 +16,14 @@
                 <div class="panel-body">
                     <form action="/register/" method="post" novalidate autocomplete="off" class="form-horizontal" enctype="multipart/form-data">
                         {% csrf_token %}
-
-                        {% for obj in reg_obj %}
-                            {% if obj.name != "pic" %}
+                        {% for field in form %}
+                            {% if field.name != "pic" %}
                                 <div class="form-group">
-                                <label for="{{ obj.id_for_label }}"
-                                       class="col-sm-3 control-label">{{ obj.label }}</label>
+                                <label for="{{ field.id_for_label }}"
+                                       class="col-sm-3 control-label">{{ field.label }}</label>
                                 <div class="col-sm-6">
-                                    {{ obj }}
-                                    <span class="help-block"> {{ obj.errors.0 }} </span>
+                                    {{ field }}
+                                    <span class="help-block"> {{ field.errors.0 }} </span>
                                 </div>
                             </div>
                             {% endif %}
@@ -36,15 +35,15 @@
                                 <label for="id_pic">
                                 <img class="pic" id="pic-img" src="/static/img/default.png" alt=""></label>
                                 <input accept="image/*" style="display: none" type="file" name="pic" id="id_pic">
-                                <span class="help-block"></span>
+                                <span class="help-block"> {{ form.pic.errors.0 }} </span>
 
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-sm-9 col-sm-offset-3">
-                                <button type="button" class="btn btn-default" id="reg-submit">注册</button>
-                                <span class="help-block"> {{ error_msg }} </span>
+                                <button type="submit" class="btn btn-default" id="reg-submit">注册</button>
+                                <span class="help-block">{{ form.non_field_errors.0 }}</span>
                             </div>
                         </div>
                     </form>
@@ -69,7 +68,8 @@
         $("#pic-img").attr("src",fileReader.result);
         };
     });
-     {#// AJAX提交注册的数据#}
+
+     /* AJAX提交注册的数据
     $("#reg-submit").click(function () {
 
         var formData = new FormData();
@@ -82,15 +82,15 @@
         $.ajax({
             url: "/register/",
             type: "post",
-            {#ajax传文件加参数#}
+            ajax传文件加参数
             processData: false,
             contentType: false,
             data: formData,
             success:function (data) {
                 if (data.status){
-                    {# 有错误就展示错误#}
-                    {#// console.log(data.msg);#}
-                    {#// 将报错信息填写到页面上#}
+                     有错误就展示错误
+                    // console.log(data.msg);
+                    // 将报错信息填写到页面上
                     $.each(data.msg, function (k,v) {
                         // console.log("id_"+k, v[0]);
                         // console.log($("#id_"+k));
@@ -104,12 +104,12 @@
         })
     });
 
-    {#// 将所有的input框绑定获取焦点的事件，将所有的错误信息清空#}
+    // 将所有的input框绑定获取焦点的事件，将所有的错误信息清空
     $("form input").focus(function () {
         $(this).next().text("").parent().parent().removeClass("has-error");
     });
 
-    {#$("#id_username").blur(function () {#}
+    $("#id_username").blur(function () {
     $("#id_username").on("input", function () {
         var username = $(this).val();
 
@@ -125,7 +125,7 @@
                 }
             }
         })
-    })
+    })*/
 
 </script>
 </body>

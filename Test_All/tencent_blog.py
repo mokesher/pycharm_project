@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 from pymysql_func.models import *
 from threading import Thread
 
-headers = {"Cookie": "wbilang_10000=zh_CN; mb_reg_quick=1; pgv_pvid=4271790720; ts_uid=4216851265; pgv_pvi=9810223104; ptui_loginuin=1017109861; RK=SXKFo494NT; ptcz=870fd2d6f2260c75642ff2d43748e1dd19710162eaefb2e30277c3434aeee3d3; luin=o1017109861; p_luin=o1017109861; wbilang_1017109861=zh_CN; o_cookie=1017109861; wb_regf=%3B0%3B%3Bapi.t.qq.com%3B0; pgv_info=ssid=s2393695422; mb_reg_from=8; _qpsvr_localtk=0.9513530639586689; pgv_si=s1963883520; ptisp=ctc; uin=o1017109861; skey=@LHOCT7eDA; lskey=00010000be1a7496b3288ab00f10d2882f9fdfc93bd017a31e77043323be21837888f7c34e2fe505ecba54ca; p_uin=o1017109861; pt4_token=*GF2H943v9Yqhspmjq2XWLUl-J0WYcH9Nd7X2p*L44A_; p_skey=*0Bnlmj-TW7FN8fXtwRTnzYmBbJJR4J8ENoGDm9boGk_; p_lskey=00040000045d4658ed4b6e41fd6b2c19d80f3639960b444bf92e7f55a147c044e2d716fe4c043ea7e39a405a; myhomeLowQuality=wangxin6510; ts_last=t.qq.com/w924989836",
+headers = {"Cookie": "pgv_pvi=5701005312; pgv_pvid=864805164; ptui_loginuin=1017109861; RK=gfKN9Y9YOz; ptcz=52b3b747eed0e8067b897cdbf5d6a23e8e1cee850fea59c0b480cc2a8d66c36c; wbilang_10000=zh_CN; o_cookie=1017109861; ts_uid=4463014641; wbilang_1017109861=zh_CN; myhomeLowQuality=wangxin6510; ts_refer=search.t.qq.com/user.php; mb_reg_quick=1; pgv_info=ssid=s6347911065; mb_reg_from=8; _qpsvr_localtk=0.6715166861908659; pgv_si=s8607945728; ptisp=ctc; uin=o1017109861; skey=@17yE1qSFA; luin=o1017109861; lskey=00010000835842874f4545933e1aaa88f74ec0897ef69ff28398a1feb14059a882140d98ec8658e17a46cb11; p_uin=o1017109861; pt4_token=EsJ-eawlLvXGMwAvDRrcbJwPI6X6FNO1WHvdtMO0l38_; p_skey=aBGoPOcXBkJKvWMvoU2MofeWQE4hEuUsRZFgWkL4oeI_; p_luin=o1017109861; p_lskey=0004000098ff213510b15cf9c064eaeacad709a929df226f61f422765556b8590e58279d9ab6d96bca223a52; wb_regf=%3B0%3B%3Bapi.t.qq.com%3B0; ts_last=t.qq.com/ywjh1172862577",
            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36","Referer": "http://api.t.qq.com/proxy.html"}
 
 
@@ -32,7 +32,7 @@ def con(url,page,side):
             tosql_follow(name,href, title, page)
 
 
-name = "four4leaves"
+name = "LDY569616474"
 html = requests.get(f"http://t.qq.com/{name}",headers=headers).text
 soup = BeautifulSoup(html, 'html.parser')
 Fans = soup.find_all(attrs={"boss": "btnApolloFollower"})[0].find('span',class_="text_count").text

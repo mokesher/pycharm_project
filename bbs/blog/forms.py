@@ -1,49 +1,27 @@
 #!/usr/bin/env python 
 # -*- coding:utf-8 -*-
-from django.forms import Form,fields,widgets
+from django import forms
+from django.forms import ModelForm,widgets
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.core.exceptions import ValidationError
 from blog import models
 from django.contrib.auth.models import User
 from django.http import HttpRequest
-from django.views import View
 
 
-class LoginForm(Form):
-    username = fields.CharField(
-        min_length=2,
-        max_length=16,
-        required=True,
-        label="用户名:",
-        initial="test",
-        widget=widgets.TextInput(
-            attrs={"class": "form-control"}
-        ),
-        error_messages={
-            "required": "不能为空",
-            "invalid": "格式错误",
-            "min_length": "用户名最短2位"
-        }
-    )
-
-    password = fields.CharField(
-        min_length=2,
-        max_length=16,
-        required=True,
-        label="密码：",
-        initial="123",
-        widget=widgets.TextInput(
-            attrs={"class": "form-control", "type": "password"}
-        ),
-        error_messages={
-            "required": "不能为空",
-            "invalid": "格式错误",
-            "min_length": "密码最短2位"
-        }
-    )
+class LoginForm(AuthenticationForm):
+    def __init__(self, *args, **kwargs):
+        super(LoginForm, self).__init__(*args, **kwargs)
+        self.fields['username'].widget = widgets.TextInput(attrs={'value': "test", "class": "form-control"})
+        self.fields['password'].widget = widgets.PasswordInput(
+            attrs={'value': "123", "class": "form-control"})
 
 
-class RegForm(Form):
-    username = fields.CharField(
+class RegisterForm(UserCreationForm):
+    def __init__(self, *args, **kwargs):
+        super(RegisterForm, self).__init__(*args, **kwargs)
+
+    username = forms.CharField(
         min_length=2,
         max_length=16,
         required=True,
@@ -58,22 +36,7 @@ class RegForm(Form):
         }
     )
 
-    password = fields.CharField(
-        min_length=2,
-        max_length=16,
-        required=True,
-        label="密码：",
-        widget=widgets.TextInput(
-            attrs={"class": "form-control"}
-        ),
-        error_messages={
-            "required": "不能为空",
-            "invalid": "格式错误",
-            "min_length": "密码最短2位"
-        }
-    )
-
-    email = fields.EmailField(
+    email = forms.EmailField(
         label="email：",
         widget=widgets.TextInput(
             attrs={"class": "form-control"}
@@ -98,10 +61,14 @@ class RegForm(Form):
         else:
             return reg_email
 
+    class Meta:
+        model = models.UserInfo
+        fields = ["username","email","pic"]
 
-class SetpwdForm(Form):
 
-    old_password = fields.CharField(
+class SetpwdForm(ModelForm):
+
+    old_password = forms.CharField(
         min_length=2,
         max_length=16,
         required=True,
@@ -115,7 +82,7 @@ class SetpwdForm(Form):
             "min_length": "用户名最短2位"
         }
     )
-    new_password = fields.CharField(
+    new_password = forms.CharField(
         min_length=2,
         max_length=16,
         required=True,
@@ -130,7 +97,7 @@ class SetpwdForm(Form):
         }
     )
 
-    repeat_password = fields.CharField(
+    repeat_password = forms.CharField(
         min_length=2,
         max_length=16,
         required=True,
@@ -154,8 +121,8 @@ class SetpwdForm(Form):
             return self.cleaned_data
 
 
-class SetInfoForm(Form):
-    email = fields.EmailField(
+class SetInfoForm(ModelForm):
+    email = forms.EmailField(
         label="email：",
         initial="",
         widget=widgets.TextInput(
@@ -166,14 +133,6 @@ class SetInfoForm(Form):
             "invalid": "格式错误",
         }
     )
-
-    # pic = fields.ImageField(
-    #     label="头像：",
-    #     widget=widgets.FileInput(
-    #         attrs={"class": "form-control"}
-    #     ),
-    #     error_messages={
-    #         "required": "不能为空",
-    #     }
-    #
-    # )
+    class Meta:
+        model = models.UserInfo
+        fields = ["email","pic"]

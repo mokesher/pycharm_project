@@ -15,6 +15,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="JsBowerSettings">
     <node-interpreter value="project" />
     <exe-path />
@@ -28,21 +31,23 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectId" id="1TlhPMIrwMXfYEUbn2Rn96O1PsF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../python图片转字符画" />
     <property name="node.js.path.for.package.stylelint" value="project" />
     <property name="node.js.selected.package.stylelint" value="" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\MOKE\Documents\pycharm_project\图云\background" />
+      <recent name="C:\Users\MOKE\Documents\pycharm_project\图云" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\MOKE\Documents\pycharm_project\图云\background" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\MOKE\Documents\pycharm_project\图云" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -163,13 +168,30 @@
       <updated>1574040564638</updated>
       <workItem from="1574040566528" duration="9974000" />
       <workItem from="1574052895033" duration="9077000" />
+      <workItem from="1574349561546" duration="1053000" />
+      <workItem from="1574394716785" duration="73000" />
+      <workItem from="1575334692689" duration="513000" />
+      <workItem from="1575339062316" duration="47000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/$cloud.coverage" NAME="cloud Coverage Results" MODIFIED="1574057687316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/$cloud.coverage" NAME="cloud Coverage Results" MODIFIED="1575334841790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

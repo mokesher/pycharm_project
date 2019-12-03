@@ -21,7 +21,6 @@ class UserInfo(AbstractUser):
         verbose_name_plural = verbose_name
 
 
-
 class Blog(models.Model):
     """
     博客信息

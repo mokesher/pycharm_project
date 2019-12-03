@@ -15,8 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,re_path,include
-from django.conf.urls import url
-from blog import views
+from blog import views,accounts
 from blog import tencent
 from django.conf import settings
 from django.views.static import serve
@@ -25,20 +24,17 @@ from blog import urls as blog_urls
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('login/', views.login),
-    path('register/', views.register),
-    path('logout/', views.logout),
-    path('change_pwd/', views.change_pwd),
-    path('check_username/', views.check_username),
-    path('set_info/', views.set_info),
+    path('login/', accounts.LoginView.as_view()),
+    path('register/', accounts.RegisterView.as_view()),
+    path('logout/', accounts.logout),
+    path('change_pwd/', accounts.change_pwd),
+    path('check_username/', accounts.check_username),
+    path('set_info/', accounts.set_info),
     path('blog/', include(blog_urls)),
 
-    re_path('index/', views.index),
-    path('', views.index),
+    path('', views.IndexView.as_view()),
 
     path('upload/',views.upload),
-
-    path('tencent_blog/', tencent.tencent_blog),
 
     re_path(r"^media/(?P<path>.*)$", serve, {"document_root": settings.MEDIA_ROOT})
 

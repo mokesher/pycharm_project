@@ -5,8 +5,8 @@ from blog import views
 
 
 urlpatterns = [
-    path("<str:username>/", views.home),
-    path("<str:username>/article/<int:article_id>/", views.article_detail),
+    path("<str:username>/", views.ArticleListView.as_view()),
+    path("<str:username>/article/<int:article_id>/", views.ArticleDetailView.as_view()),
     path("func/up_down/", views.up_down),
     path("func/comment/", views.comment),
     path("comment_tree/<int:article_id>", views.comment_tree),

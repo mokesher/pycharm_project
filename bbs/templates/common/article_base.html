@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ blog.title }}的博客</title>
+    <title>{{ user.blog.title }}的博客</title>
     {% include "common/css.html" %}
     <link rel="stylesheet" href="{% static 'up_down.css' %}">
     <link rel="stylesheet" href="/static/style.css">
@@ -11,7 +11,7 @@
 <body>
 <div class="header">
     <p>
-        <a href="/blog/{{ username }}/">{{ blog.title }}</a>
+        <a href="/blog/{{ user.username }}/">{{ user.blog.title }}</a>
         <span class="pull-right">
             <a href="/blog/backend/add_article/">新文章</a>
             <a href="/">首页</a>
@@ -23,7 +23,7 @@
     <div class="col-md-3">
         {% load list_tag %}
 
-        {% left_panel username %}
+        {% left_panel user.username %}
     </div>
     <div class="col-md-8">
         {% block article-main %}
