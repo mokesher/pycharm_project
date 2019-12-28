@@ -53,7 +53,7 @@ class AcfunSpider(scrapy.Spider):
         # print(article_title)
         for data in article_txt:
             user_name = article_txt[data]["userName"]
-            if user_name == "去无的止境":
+            if user_name == "Syer_Lu":
                 print(article_title)
                 item["article_title"] = article_title
                 item["page"] = response.meta['page']
