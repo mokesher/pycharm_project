@@ -38,7 +38,7 @@ def down(article_title, req_url, url, page):
         user_name = article_txt[data]["userName"]
         # print(user_name)
         content = article_txt[data]["content"]
-        if user_name == "白一1":
+        if user_name == "中老年抖m":
             print("评论:", url)
             print("page:", page)
             print(content)

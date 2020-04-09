@@ -37,3 +37,4 @@ url = "https://coupon-center.jd.com/skinCoupons.html?#/?activityId=3c3b36b5-c595
 
 login('13209432307', 'hxmh23weimei',url)
 buy_on_time('2019-12-08 00:00:01')
+·

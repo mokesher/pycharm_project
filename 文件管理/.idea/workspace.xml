@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3b4cefd-701f-40c2-9860-ea121e555024" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,27 +40,21 @@
   </component>
   <component name="ProjectId" id="1Pds1lLO0LrgAT76SdpFPl4Bb1Z" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/demo/microblog-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.path.for.package.stylelint" value="project" />
     <property name="node.js.selected.package.stylelint" value="" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Python.move_上一级">
     <configuration name="file_move" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -222,6 +215,15 @@
       <workItem from="1570191712649" duration="1696000" />
       <workItem from="1570261358013" duration="2391000" />
       <workItem from="1573723207335" duration="1108000" />
+      <workItem from="1578122262646" duration="542000" />
+      <workItem from="1578139737321" duration="16000" />
+      <workItem from="1583052348685" duration="497000" />
+      <workItem from="1584253188658" duration="419000" />
+      <workItem from="1584456400581" duration="33000" />
+      <workItem from="1586139590981" duration="189000" />
+      <workItem from="1586156347691" duration="563000" />
+      <workItem from="1586362459731" duration="10000" />
+      <workItem from="1586431438326" duration="150000" />
     </task>
     <servers />
   </component>
@@ -234,11 +236,33 @@
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
   </component>
+  <component name="WindowStateProjectService">
+    <state x="449" y="170" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1586431483927">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="449" y="170" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.864@0.0.1536.864" timestamp="1586431483927" />
+    <state width="1492" height="216" key="GridCell.Tab.0.bottom" timestamp="1586156910166">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1492" height="216" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1586156910166" />
+    <state width="1492" height="216" key="GridCell.Tab.0.center" timestamp="1586156910166">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1492" height="216" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1586156910166" />
+    <state width="1492" height="216" key="GridCell.Tab.0.left" timestamp="1586156910166">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1492" height="216" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1586156910166" />
+    <state width="1492" height="216" key="GridCell.Tab.0.right" timestamp="1586156910166">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state width="1492" height="216" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1586156910166" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/$move_.coverage" NAME="move_上一级 Coverage Results" MODIFIED="1573723918140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/$rename.coverage" NAME="遍历rename Coverage Results" MODIFIED="1567672997460" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/$test.coverage" NAME="test Coverage Results" MODIFIED="1570263043596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/$test.coverage" NAME="test Coverage Results" MODIFIED="1578122778156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/$move_.coverage" NAME="move_上一级 Coverage Results" MODIFIED="1586156861715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/$file_move.coverage" NAME="file_move Coverage Results" MODIFIED="1564294969522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/$rename.coverage" NAME="遍历rename Coverage Results" MODIFIED="1567672997460" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="masterDetails">
     <states>
