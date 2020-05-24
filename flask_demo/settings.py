@@ -1,4 +1,0 @@
-
-
-class Pro:
-    Debug = False

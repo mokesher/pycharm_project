@@ -1,36 +1,35 @@
 #!/usr/bin/env python 
 # -*- coding:utf-8 -*-
-#!/usr/bin/env python
+# !/usr/bin/env python
 # -*- coding:utf-8 -*-
 import socket
+
 client = socket.socket()
-client.connect(('localhost',9999))
+client.connect(('localhost', 9999))
 
 while True:
     cmd = input(">>:").strip()
-    if len(cmd) == 0:continue
+    if len(cmd) == 0: continue
     if cmd.startswith("get"):
         client.send(cmd.encode())
         server_response = client.recv(1024)
-        print("server response:",server_response)
+        print("server response:", server_response)
         client.send(b"ready to recv file")
         file_total_size = int(server_response)
         received_size = 0
-        filename = cmd.split()[1]   #切片 get filename [1]取出
-        f = open(filename+".new","wb")
+        filename = cmd.split()[1]  # 切片 get filename [1]取出
+        f = open(filename + ".new", "wb")
         while received_size < file_total_size:
-            if file_total_size - received_size >1024:
+            if file_total_size - received_size > 1024:
                 size = 1024
             else:
                 size = file_total_size - received_size
-                print("last receive:",size)
+                print("last receive:", size)
             data = client.recv(size)
             received_size += len(data)
             f.write(data)
             # print(file_total_size,received_size)
         else:
-            print("file recv done",received_size,file_total_size)
-
+            print("file recv done", received_size, file_total_size)
 
 client.close()
-

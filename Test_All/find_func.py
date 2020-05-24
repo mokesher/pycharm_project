@@ -23,6 +23,3 @@ for name in table_list:
         sum.append(item[0])
 
 print(Counter(sum))
-
-
-

@@ -1,4 +1,4 @@
-	#!/usr/bin/env python 
+# !/usr/bin/env python
 # -*- coding:utf-8 -*-
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 import random
@@ -7,12 +7,18 @@ import random
 # 随机字母:
 def rndChar():
     return chr(random.randint(65, 90))
+
+
 # 随机颜色1:
 def rndColor():
     return (random.randint(64, 255), random.randint(64, 255), random.randint(64, 255))
+
+
 # 随机颜色2:
 def rndColor2():
     return (random.randint(32, 127), random.randint(32, 127), random.randint(32, 127))
+
+
 # 240 x 60:
 width = 60 * 4
 height = 60

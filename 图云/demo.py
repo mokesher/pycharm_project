@@ -9,7 +9,6 @@ class GreetingsToQiao:
         self.stopwords = self.get_stopwords('stopwords.txt')
         self.word_frequency = dict()
 
-
     @staticmethod
     def get_stopwords(file):
         with open(file, encoding='utf-8') as f:

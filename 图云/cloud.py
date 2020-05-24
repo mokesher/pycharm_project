@@ -1,6 +1,6 @@
 #!/usr/bin/env python 
 # -*- coding: utf-8 -*-
-from wordcloud import WordCloud,get_single_color_func,ImageColorGenerator
+from wordcloud import WordCloud, get_single_color_func, ImageColorGenerator
 import matplotlib.pyplot as plt
 from PIL import Image
 # import jieba,chardet
@@ -35,7 +35,7 @@ image = np.array(Image.open('background/1.jpg'))
 
 wc = WordCloud(
     background_color="white",
-    mask = image,
+    mask=image,
     scale=4,
     random_state=42,
     max_words=800,
@@ -44,7 +44,6 @@ wc = WordCloud(
     width=2560,
     font_path="./simkai.ttf",
     margin=2)
-
 
 # wordcloud = wc.generate(text)
 wc.generate_from_frequencies(word_frequency)
