@@ -15,8 +15,8 @@ class AcfunSpider(scrapy.Spider):
 
     def start_requests(self):
         loginUrl = "https://id.app.acfun.cn/rest/web/login/signin"
-        yield scrapy.FormRequest(url=loginUrl, formdata={"username": "13321270519",
-                                                         "password": "hxmh23wei", },
+        yield scrapy.FormRequest(url=loginUrl, formdata={"username": "**",
+                                                         "password": "**", },
                                  callback=self.after_login
                                  )
 
