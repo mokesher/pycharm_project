@@ -14,7 +14,6 @@ urlpatterns = [
     path('index/', views.index),
     path('login/', views.Login.as_view()),
 
-    path('csrf1/', views.csrf1),
 
     # path('test/<int:page>', views.test, name="test_page"),
     # url(r'test/(?P<page>\d+)', views.test, name="test_page"),

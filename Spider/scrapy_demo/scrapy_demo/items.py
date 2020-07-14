@@ -8,14 +8,8 @@
 import scrapy
 
 
-class ScrapyDemoItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
-
-
-class Acfun_qiangan(scrapy.Item):
-    article_title = scrapy.Field()
+class Acfun_Item(scrapy.Item):
+    title = scrapy.Field()
     page = scrapy.Field()
     content = scrapy.Field()
     url = scrapy.Field()

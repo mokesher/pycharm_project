@@ -42,9 +42,3 @@ class Login(View):
             return render(request, "login.html", {'error': error_msg})
 
 
-@csrf_protect
-def csrf1(request):
-    if request.method == "GET":
-        return render(request, "csrf1.html")
-    else:
-        return HttpResponse("ok")

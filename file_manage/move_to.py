@@ -9,11 +9,11 @@ def run(start_path, result_file):
         if os.path.isfile(file):
             if file == os.path.join(result_file, i):
                 continue
-            elif i.endswith(".wmv") or i.endswith(".mp4") or i.endswith(".mkv") or i.endswith(".avi") or i.endswith(
-                    ".MP4") or i.endswith(".mov"):
+            # elif i.endswith(".wmv") or i.endswith(".mp4") or i.endswith(".mkv") or i.endswith(".avi") or i.endswith(".MP4") or i.endswith(".mov"):
+            elif i.endswith(".flac") or i.endswith(".mp3"):
                 print(file)
                 try:
-                    shutil.move(file, result_file)
+                    shutil.copy(file, result_file)
                     pass
                 except shutil.Error:
                     name = i.rsplit(".")[0]
@@ -27,6 +27,6 @@ def run(start_path, result_file):
             run(file, result_file)
 
 
-start_path = r"D:\Bit"
+start_path = r"E:\Github\pycharm_project\Test_All\spider\mp3"
 result_file = start_path
 run(start_path, result_file)

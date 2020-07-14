@@ -10,7 +10,7 @@ class Classes(models.Model):
 class Teacher(models.Model):
     id = models.AutoField(primary_key=True)
     teacher = models.CharField(max_length=16)
-    theclass = models.ForeignKey(to="Classes", on_delete=models.CASCADE())
+    theclass = models.ForeignKey(to="Classes", on_delete=models.CASCADE)
 
     def __str__(self):
         return f"id:{self.id}-{self.teacher}"

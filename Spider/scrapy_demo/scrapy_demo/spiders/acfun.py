@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 import scrapy
 from scrapy.http import HtmlResponse
-from scrapy_demo.items import Acfun_qiangan
+from scrapy_demo.items import Acfun_Item
 import json, time, re
 
 
 class AcfunSpider(scrapy.Spider):
-    name = 'acfun'
+    name = 'acfun1'
     allowed_domains = ['acfun.cn']
     start_urls = [
         'https://webapi.acfun.cn/query/article/list?pageNo=1&size=10&realmIds=25%2C34%2C7%2C6%2C17%2C1%2C2&originalOnly=false&orderType=1&periodType=-1&filterTitleImage=true',
@@ -48,7 +48,7 @@ class AcfunSpider(scrapy.Spider):
         yield scrapy.Request(url=next_url, callback=self.article_list)
 
     def get_parse(self, response):
-        item = Acfun_qiangan()
+        item = Acfun_Item()
         article_txt = json.loads(response.text)["commentsMap"]
         article_title = response.meta['article_title']
         # print(article_title)

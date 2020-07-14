@@ -43,11 +43,12 @@ class ScrapyAcfunSql(object):
         self.cursor = self.conn.cursor(cursor=pymysql.cursors.DictCursor)
 
     def process_item(self, item, spider):
-        print(item)
-        result = self.cursor.execute("SELECT content from acfun WHERE content=%s;", [item["content"]])
+        # print(item)
+        result = self.cursor.execute("SELECT content from ac_moke WHERE content=%s;", [item["content"]])
         if not result:
-            self.cursor.execute("insert into acfun(article_title,page,content,url,date) values(%s,%s,%s,%s,%s)",
-                                [item["article_title"], item["page"], item["content"], item["url"], item["date"]])
+            self.cursor.execute("insert into ac_moke(title,page,content,url,date) "
+                                "values(%s,%s,%s,%s,%s)", [item["title"], item["page"],
+                                                           item["content"], item["url"], item["date"]])
             self.conn.commit()
 
         return item
