@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*-
 import os, shutil, random
 
+file_list = (".wmv", ".mp4", ".mkv", ".avi", ".mov")
 
 def run(start_path, result_file):
     path_list = os.listdir(start_path)
@@ -9,11 +10,7 @@ def run(start_path, result_file):
         if os.path.isfile(file):
             if file == os.path.join(result_file, i):
                 continue
-            elif i.lower().endswith(".wmv") or i.lower().endswith(".mp4")\
-                    or i.lower().endswith(".mkv")\
-                    or i.lower().endswith(".avi")\
-                    or i.lower().endswith(".mov"):
-            # elif i.endswith(".flac") or i.endswith(".mp3"):
+            elif i.lower().endswith(file_list):
                 print(file)
                 try:
                     shutil.move(file, result_file)
