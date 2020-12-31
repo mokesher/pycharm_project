@@ -26,6 +26,6 @@ def run(start_path, result_file):
             run(file, result_file)
 
 
-start_path = r"D:\bz"
+start_path = r"D:\迅雷下载"
 result_file = start_path
 run(start_path, result_file)
